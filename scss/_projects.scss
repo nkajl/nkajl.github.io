@@ -1,47 +1,134 @@
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc($curve * 1px);
+  overflow: hidden;
+  text-decoration: none;
+  height: 33vh;
+
+  &__image {      
+    width: 100%;
+    height: auto;
+  }
+  
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc($curve * 1px);    
+    background-color: lighten($primary-color, 10%);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card:hover &__overlay {
+    transform: translateY(0);
+  }
+  
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc($curve * 1px) 0 0 0;    
+    background-color: lighten($primary-color, 10%);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  &__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  &__arc path {
+    fill: lighten($primary-color, 10%);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  }       
+  
+  .card:hover &__header {
+    transform: translateY(0);
+  }
+  
+  &__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+  }
+  
+  &__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: $secondary-color;
+  }
+  
+  &__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";  
+    font-size: .8em; 
+    color: #D7BDCA;  
+  }
+  
+  &__status {
+    font-size: .8em;
+    color: #D7BDCA;
+  }
+  
+  &__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #D7BDCA;
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "MockFlowFont";   
+    overflow: hidden;
+  }    
+}
+
+
+
 .projects {
   padding-bottom: 2rem;
-
-  &__menu {
-    height: 40vh;
-    width: 100%;
-
-  }
+  position: relative;
+  top: 100px;
 
 
-
-  &__bio-image {
-    height: 30vh;
-    width: 100%;
-    background: 
-      linear-gradient(
-        to right,
-        rgba($primary-color, 0.9),
-        rgba($primary-color, 0.3)
-      ),
-      url('portfolio-sass/dist/img/model-1.jpg') center top;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+  &__title {
+      display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
-
-    .text-secondary {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
+    font-size: 28px;
+    margin-top: 2rem;
   }
+
 
   &__items {
     width: 60vw;
-    margin: 2rem auto 0 auto;
+    margin: 5rem auto 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2rem;
+
   }
 
   &__item {
     position: relative;
     border-bottom: 5px solid $secondary-color;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
     overflow: hidden;
     cursor: pointer;
 
@@ -70,6 +157,10 @@
         opacity: 1;
       }
     }
+  }
+  &__item-title{
+    height: 2rem;
+    background-color: rgba($primary-color, 0.3);
   }
 
   &__btns {
@@ -102,7 +193,7 @@
   footer {
     transform:
       rotate(90deg)
-      translate(-3rem, -5rem);
+      translate(-4.25rem, -5.5rem);
   }
   
 }

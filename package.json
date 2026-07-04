@@ -1,0 +1,19 @@
+{
+  "name": "nkajl.github.io",
+  "version": "1.0.0",
+  "description": "Personal portfolio website of Nikita Kajalin",
+  "author": "Nikita Kajalin",
+  "license": "MIT",
+  "scripts": {
+    "dev": "sass --watch --no-source-map scss/main.scss:css/main.css",
+    "build": "sass --style=compressed --no-source-map scss/main.scss:css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkajl/nkajl.github.io.git"
+  },
+  "homepage": "https://nkajl.github.io",
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}

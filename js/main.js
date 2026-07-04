@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateStyles() {
     let isScrolled = window.scrollY > 100;
 
-    menuContainer.style.backgroundColor = isScrolled ? "#ff652f" : "transparent";
+    menuContainer.style.backgroundColor = isScrolled ? "#2f78ff" : "transparent";
     menuContainer.style.opacity = isScrolled ? "0.9" : "1";
-    menuItem.style.color = isScrolled ? "#272727" : "#ff652f";
+    menuItem.style.color = isScrolled ? "#272727" : "#2f78ff";
 
     menuLinks.forEach(function (link) {
       link.addEventListener("mouseenter", function () {
-        link.style.color = isScrolled ? "#272727" : "#ff652f";
+        link.style.color = isScrolled ? "#272727" : "#2f78ff";
       });
 
       link.addEventListener("mouseleave", function () {
@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const footer = document.getElementById('footer');
 
-
-
+if (footer) {
+  footer.innerHTML = `&copy; ${new Date().getFullYear()} Nikita Kajalin`;
+}

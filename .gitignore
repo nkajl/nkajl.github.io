@@ -1,2 +1,7 @@
-dist/css/main.css.map
+node_modules/
+
 .idea/
+.vscode/
+
+.DS_Store
+Thumbs.db

@@ -2,32 +2,33 @@
   padding-bottom: 2rem;
 
   &__bio-image {
-    height: 50vh;
+    min-height: 50vh;
     width: 100%;
-    background: 
+    padding: 7rem 1.5rem 3rem;
+    background:
       linear-gradient(
         to right,
         rgba($primary-color, 0.9),
         rgba($primary-color, 0.3)
       ),
-      url('../img/ADS_5497.jpg') center top;
+      url('../img/ADS_5497.jpg') center 30%;
     background-size: cover;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-
-    p {
-      margin-bottom: 2rem;
-    }
+    align-items: flex-end;
+    justify-content: center;
   }
 
   &__bio {
-    width: 80%;
+    width: min(900px, 100%);
     text-align: center;
 
     .text-secondary {
       padding-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1.55;
     }
   }
 
@@ -40,16 +41,24 @@
 
     &__job {
       background: lighten($primary-color, 10%);
-      padding: 0.5rem;
+      padding: 1rem;
       border-bottom: 5px solid $secondary-color;
 
       h2, h3 {
-        margin: 0.5rem 0;
+        margin: 0.75rem 0;
       }
       h6 {
-        margin: 0.3rem 0;
+        margin: 0.5rem 0;
+      }
+
+      p {
+        line-height: 1.5;
       }
     }
+  }
+
+  ul {
+    padding: 1rem;
   }
 
   .social-icons {
@@ -60,7 +69,7 @@
   footer {
     transform:
       rotate(90deg)
-      translate(-3rem, -5rem);
+      translate(-4.25rem, -5.5rem);
   }
   
 }
